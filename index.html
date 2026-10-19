@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尼康 F80 速查手册｜F80 / F80D / F80S</title>
+<meta name="description" content="尼康 F80（N80）胶片单反的中文速查手册：装卷、倒卷、曝光模式、对焦、测光、闪光、自定义设置与提示信息。">
+<style>
+:root {
+  --ink: #1d1d1f;
+  --ink-2: #4a4a4f;
+  --ink-3: #75757c;
+  --paper: #f7f5f0;
+  --card: #ffffff;
+  --line: #e2ddd2;
+  --accent: #b3261e;
+  --accent-soft: #fbeeec;
+  --blue: #1f5c8b;
+  --green: #1f6b4a;
+  --bili: #fb7299;
+  --shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.05);
+  --mono: "Cascadia Mono", Consolas, "SF Mono", monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 15px/1.75 "Segoe UI", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- hero ---------- */
+.hero {
+  background: linear-gradient(160deg, #171719 0%, #26262b 55%, #303038 100%);
+  color: #f3efe6; padding: 52px 24px 40px;
+}
+.hero-inner { max-width: 1180px; margin: 0 auto; }
+.eyebrow {
+  font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+  color: #d9c9a3; margin: 0 0 10px;
+}
+h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.2; margin: 0 0 10px; font-weight: 800; letter-spacing: .01em; }
+.sub { color: #c8c4bb; font-size: 14.5px; margin: 0 0 22px; max-width: 62ch; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 4px; padding: 0; list-style: none; }
+.badges li {
+  font-size: 12.5px; padding: 4px 10px; border-radius: 999px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: #e9e4d9;
+}
+.badges b { color: #fff; font-weight: 700; }
+
+/* ---------- topbar ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(247,245,240,.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  max-width: 1180px; margin: 0 auto; padding: 10px 24px;
+  display: flex; align-items: center; gap: 14px;
+}
+.brand { font-weight: 800; font-size: 14px; white-space: nowrap; color: var(--ink); }
+.brand span { color: var(--accent); }
+.search {
+  flex: 1; display: flex; align-items: center; gap: 8px;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px;
+}
+.search input {
+  border: 0; outline: 0; font: inherit; font-size: 14px; width: 100%; background: transparent; color: var(--ink);
+}
+.search kbd {
+  font: 11px var(--mono); color: var(--ink-3); border: 1px solid var(--line);
+  border-radius: 5px; padding: 1px 5px; background: #faf8f4;
+}
+.hits { font-size: 12.5px; color: var(--ink-3); white-space: nowrap; }
+
+/* ---------- layout ---------- */
+.layout {
+  max-width: 1180px; margin: 0 auto; padding: 26px 24px 80px;
+  display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 40px;
+}
+.layout > * { min-width: 0; }
+.toc {
+  position: sticky; top: 74px; align-self: start; max-height: calc(100vh - 100px); overflow: auto;
+  padding-right: 6px;
+}
+.toc h2 { font-size: 12px; letter-spacing: .12em; color: var(--ink-3); text-transform: uppercase; margin: 0 0 10px; }
+.toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
+.toc li { margin: 0; }
+.toc a {
+  display: block; padding: 5px 0 5px 12px; margin-left: -1px;
+  border-left: 2px solid transparent; color: var(--ink-2); font-size: 13.5px; line-height: 1.45;
+}
+.toc a:hover { color: var(--accent); text-decoration: none; }
+.toc a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 700; background: linear-gradient(90deg, var(--accent-soft), transparent); }
+.tocnum { color: var(--ink-3); margin-right: 6px; font-size: 12.5px; }
+
+main { min-width: 0; }
+section { margin: 0 0 34px; }
+section.dim { display: none; }
+
+h2 {
+  font-size: 20px; line-height: 1.4; margin: 34px 0 12px; padding-left: 12px;
+  border-left: 4px solid var(--accent); scroll-margin-top: 86px;
+}
+section:first-of-type h2 { margin-top: 0; }
+.h2num { color: var(--accent); margin-right: 6px; }
+.anchor { opacity: 0; margin-left: 8px; font-size: 14px; color: var(--ink-3); text-decoration: none; }
+h2:hover .anchor { opacity: 1; }
+h3 { font-size: 15.5px; margin: 22px 0 8px; color: #2c2c31; }
+p { margin: 0 0 10px; }
+
+ul.bullets, ol.steps { margin: 6px 0 12px; padding-left: 22px; }
+ul.bullets li, ol.steps li { margin: 0 0 6px; }
+ul.bullets { list-style: none; padding-left: 18px; }
+ul.bullets li::before { content: "▸"; color: var(--accent); float: left; margin-left: -16px; font-size: 13px; }
+ol.steps { list-style: decimal; }
+ol.steps li::marker { color: var(--accent); font-weight: 700; }
+
+/* ---------- tables ---------- */
+.table-wrap { overflow-x: auto; margin: 10px 0 16px; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+table.tbl { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+table.tbl th, table.tbl td { padding: 8px 11px; text-align: left; vertical-align: top; border-bottom: 1px solid #eeeae1; }
+table.tbl th { background: #f1ece2; font-weight: 700; white-space: nowrap; color: #33333a; }
+table.tbl tbody tr:nth-child(even) { background: #fbfaf7; }
+table.tbl tbody tr:last-child td { border-bottom: 0; }
+table.tbl strong { color: #12121a; }
+table.csm td:first-child { text-align: center; color: var(--ink-3); width: 46px; }
+table.csm td:nth-child(2) { white-space: nowrap; }
+table.err td:first-child { font-weight: 700; white-space: nowrap; }
+table.diff td:first-child { color: var(--ink-2); }
+
+/* ---------- callouts ---------- */
+.call {
+  display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start;
+  margin: 12px 0 14px; padding: 10px 14px; border-radius: 8px;
+  border-left: 4px solid var(--blue); background: #f2f6fa;
+}
+.call p { margin: 0; font-size: 14px; }
+.call-label { font-size: 12px; font-weight: 800; color: var(--blue); white-space: nowrap; padding-top: 1px; }
+.call.warn { border-left-color: #c0392b; background: #fdf1ef; }
+.call.warn .call-label { color: #a93226; }
+.call.key { border-left-color: #8a6d1f; background: #fbf6e6; }
+.call.key .call-label { color: #7a5f18; }
+.call.begin { border-left-color: var(--green); background: #eef7f2; }
+.call.begin .call-label { color: var(--green); }
+.call.note { border-left-color: var(--ink-3); background: #f4f4f2; }
+.call.note .call-label { color: var(--ink-2); }
+
+/* ---------- quick cards ---------- */
+.quick { max-width: 1180px; margin: 26px auto 0; padding: 0 24px; position: relative; z-index: 5; }
+.quick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 12px; }
+.qcard {
+  display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow);
+  color: var(--ink); transition: transform .15s ease, box-shadow .15s ease, border-color .15s;
+}
+.qcard:hover { transform: translateY(-2px); text-decoration: none; border-color: #cfc7b8; box-shadow: 0 10px 26px rgba(0,0,0,.08); }
+.qtitle { font-weight: 800; font-size: 14.5px; color: var(--accent); }
+.qtext { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+
+/* ---------- details panel ---------- */
+.panel {
+  max-width: 1180px; margin: 26px auto 0; padding: 0 24px;
+}
+.panel details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 0 18px; box-shadow: var(--shadow); }
+.panel summary {
+  cursor: pointer; padding: 14px 0; font-weight: 700; font-size: 15px; list-style: none;
+  display: flex; align-items: center; gap: 10px;
+}
+.panel summary::-webkit-details-marker { display: none; }
+.panel summary::before { content: "＋"; color: var(--accent); font-weight: 800; }
+.panel details[open] summary::before { content: "－"; }
+.panel .table-wrap { margin-top: 0; }
+.panel table.tbl td:first-child { white-space: nowrap; font-weight: 700; width: 34%; }
+
+/* ---------- videos ---------- */
+.videos { max-width: 1180px; margin: 40px auto 0; padding: 0 24px; }
+.videos > h2 { border-left: 4px solid var(--bili); }
+.videos .lead { color: var(--ink-2); font-size: 14px; margin: -4px 0 14px; }
+.vgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.vcard {
+  display: block; background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 16px 18px; color: var(--ink); box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s;
+}
+.vcard:hover { transform: translateY(-2px); text-decoration: none; border-color: var(--bili); box-shadow: 0 12px 30px rgba(251,114,153,.18); }
+.vtop { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.vtag { font-size: 11.5px; font-weight: 700; color: #fff; background: var(--bili); border-radius: 999px; padding: 2px 9px; }
+.vdur { font-size: 11.5px; color: var(--ink-3); font-family: var(--mono); }
+.vplay { margin-left: auto; color: var(--bili); font-size: 13px; }
+.vcard h3 { margin: 0 0 6px; font-size: 14.5px; line-height: 1.5; }
+.vmeta { margin: 0 0 6px; font-size: 11.5px; color: var(--ink-3); font-family: var(--mono); line-height: 1.5; }
+.vdesc { margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+
+/* ---------- misc ---------- */
+.to-top {
+  position: fixed; right: 20px; bottom: 20px; width: 42px; height: 42px; border-radius: 50%;
+  background: var(--ink); color: #fff; display: grid; place-items: center; font-size: 16px;
+  opacity: 0; pointer-events: none; transition: opacity .2s; box-shadow: var(--shadow); z-index: 50;
+}
+.to-top.show { opacity: .92; pointer-events: auto; }
+.to-top:hover { text-decoration: none; opacity: 1; }
+footer {
+  border-top: 1px solid var(--line); padding: 26px 24px 50px; color: var(--ink-3); font-size: 12.5px;
+}
+footer .fin { max-width: 1180px; margin: 0 auto; }
+footer a { color: var(--ink-2); }
+mark { background: #ffe9a8; padding: 0 2px; border-radius: 3px; }
+.no-hit { display: none; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 18px; padding-top: 16px; }
+  .toc { position: static; max-height: none; overflow: visible; }
+  .toc ol { display: flex; gap: 6px; overflow-x: auto; border-left: 0; padding-bottom: 6px; }
+  .toc a { white-space: nowrap; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; background: #fff; }
+  .toc a.active { background: var(--accent-soft); border-color: var(--accent); }
+  .hero { padding: 34px 20px 34px; }
+  .quick, .panel, .videos { padding: 0 16px; }
+  .layout { padding-left: 16px; padding-right: 16px; }
+  .topbar-inner { padding: 8px 16px; }
+  .brand { display: none; }
+}
+@media print {
+  .topbar, .toc, .to-top, .hero .badges { display: none; }
+  body { background: #fff; font-size: 11pt; }
+  .layout { display: block; padding: 0; max-width: none; }
+  .hero { background: none; color: #000; padding: 0 0 12px; }
+  .hero .sub { color: #333; }
+  .qcard, .vcard { break-inside: avoid; }
+  section { break-inside: avoid-page; }
+  a { color: #000; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Nikon F80 / N80 · 35mm AF SLR · 2000</p>
+    <h1>尼康 F80 速查手册</h1>
+    <p class="sub">依据《尼康 F80／F80D／F80S 使用说明书》整理修订。一页收齐装卷、倒卷、曝光、对焦、测光、闪光与故障提示，随时用 <b>Ctrl+F</b> 或按 <b>/</b> 键查找。</p>
+    <ul class="badges">
+      <li>快门 <b>30–1/4000s</b> ＋B 门</li>
+      <li>闪光同步 <b>1/125s</b></li>
+      <li>连拍 <b>2.5 fps</b></li>
+      <li>对焦 <b>5 点</b></li>
+      <li>测光 <b>3D 矩阵／中央重点／点测光</b></li>
+      <li>电源 <b>CR123A ×2</b></li>
+      <li>机身 <b>约 515g</b></li>
+    </ul>
+  </div>
+</header>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="brand">F80<span>·</span>速查</span>
+    <label class="search">
+      <span aria-hidden="true">🔍</span>
+      <input id="q" type="search" placeholder="搜索：FEE、倒卷、ISO、包围曝光、闪光同步……" autocomplete="off" spellcheck="false">
+      <kbd>/</kbd>
+    </label>
+    <span class="hits" id="hits"></span>
+  </div>
+</div>
+
+<div class="quick">
+  <div class="quick-grid">
+<a class="qcard" href="#film"><span class="qtitle">装胶卷</span><span class="qtext">片头插入卷片轴、拉到红线（不过线），合盖自动进到第 1 张。显示 Err＋E 就是没装好。</span></a>
+<a class="qcard" href="#rewind"><span class="qtitle">倒卷</span><span class="qtext">卷末自动倒片；中途倒片按住“闪光同步模式”＋“LCD 照明”两个键约 1 秒。</span></a>
+<a class="qcard" href="#lens"><span class="qtitle">显示 FEE</span><span class="qtext">非 G 型 CPU 镜头的光圈环没锁在最小光圈，此时快门锁定——转到最小光圈并锁定。</span></a>
+<a class="qcard" href="#lens"><span class="qtitle">显示 F−−</span><span class="qtext">没装镜头或装的是非 CPU 镜头；非 CPU 只能用 M 挡、没有测光。</span></a>
+<a class="qcard" href="#iso"><span class="qtitle">快门按不下</span><span class="qtext">模式盘停在 CSM 或 ISO 挡时不能释放快门，转回 P／S／A／M 即可。</span></a>
+<a class="qcard" href="#errors"><span class="qtitle">HI / Lo</span><span class="qtext">取景器提示过亮／过暗：P 加 ND 或用闪光，S 改快门，A 改光圈。</span></a>
+  </div>
+</div>
+
+<div class="panel">
+  <details>
+    <summary>机身按键与控件速查（20 项，遇到不认识的旋钮先看这里）</summary>
+    <div class="table-wrap">
+      <table class="tbl">
+        <thead><tr><th>控件</th><th>作用</th></tr></thead>
+        <tbody>
+<tr><td>模式盘（曝光模式／自定义设置／ISO）</td><td>P 自动多程序、S 快门优先、A 光圈优先、M 手动、CSM 自定义设置、ISO 感光度。停在 CSM／ISO 时快门不能释放。</td></tr>
+<tr><td>主指令拨盘</td><td>设快门（S／M）、设光圈（A／M）、程序偏移、曝光补偿、包围曝光、闪光同步模式、闪光曝光补偿、CSM 选项号。</td></tr>
+<tr><td>副指令拨盘</td><td>设光圈（A／M）、包围曝光张数与级差、CSM 选项值。</td></tr>
+<tr><td>快门按钮</td><td>半按＝测光＋对焦；全按＝拍摄。中央螺纹孔可接 AR-3 机械快门线。</td></tr>
+<tr><td>对焦模式选择器</td><td>S 单次伺服（对焦优先）／C 连续伺服（释放优先）／M 手动。</td></tr>
+<tr><td>AF 区域模式选择器</td><td>单区 AF（只用所选点）／动态 AF（主体移动时自动切换对焦点）。</td></tr>
+<tr><td>对焦区域选择器＋锁杆</td><td>四向按键移动对焦点；锁杆拨到锁定位置可防止误碰。</td></tr>
+<tr><td>测光选择器（取景器右侧）</td><td>矩阵（3D 矩阵）／中央重点（12mm 圆）／点测光（4mm，随对焦点移动）。</td></tr>
+<tr><td>AE-L/AF-L 按钮</td><td>按住锁定曝光（取景器显示 EL），默认同时锁焦；CSM 11 可改功能。</td></tr>
+<tr><td>± 曝光补偿按钮</td><td>按住 + 主拨盘，±3 EV（1/2 级）；关机不清除，需手动归零或双键复位。</td></tr>
+<tr><td>包围曝光按钮</td><td>按住 + 主拨盘开关包围曝光，+ 副拨盘选张数与级差（2／3 张，0.5–2 EV）。</td></tr>
+<tr><td>闪光同步模式按钮（兼倒片键）</td><td>按住 + 主拨盘切换五种同步模式；与其他倒片键同时按住约 1 秒开始倒片。</td></tr>
+<tr><td>LCD 照明按钮（兼倒片键）</td><td>点亮 LCD 背光（CSM 17 可设为任意键点亮）；也是倒片键之一。</td></tr>
+<tr><td>过片模式选择器＋锁释放</td><td>单张／连拍（约 2.5 fps）／多重曝光／自拍（默认 10 秒，CSM 16 可改）。</td></tr>
+<tr><td>景深预览按钮</td><td>光圈收到当前设定值，从取景器观察景深。</td></tr>
+<tr><td>镜头释放钮</td><td>按住后顺时针旋下镜头；安装镜头时不要按它。</td></tr>
+<tr><td>闪光灯锁释放钮</td><td>按下弹起内置闪光灯并开始充电；不用时按回以省电。</td></tr>
+<tr><td>屈光度调节杆</td><td>取下眼罩后滑动调节，范围 −1.8～+0.8 m⁻¹。</td></tr>
+<tr><td>电源开关／电池仓锁</td><td>机身顶部电源开关；电池仓盖锁扣向箭头方向滑动即可开仓。</td></tr>
+<tr><td>后盖锁释放杆</td><td>向侧面滑动打开后盖；装卷、取卷都在这里。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+
+<section class="videos" id="videos">
+  <h2><span class="h2num">▶</span>视频讲解（哔哩哔哩）</h2>
+  <p class="lead">先看 3 分钟的教程熟悉操作，再用长视频补使用经验。链接在新标签页打开 B 站，需要联网。</p>
+  <div class="vgrid">
+<a class="vcard" href="https://www.bilibili.com/video/BV1Gwjiz1EhY/" target="_blank" rel="noopener noreferrer">
+      <div class="vtop"><span class="vtag">教程</span><span class="vdur">3:30</span><span class="vplay">▶</span></div>
+      <h3>使用教程｜尼康F80/F80D/F80S超详细教程</h3>
+      <p class="vmeta">UP 主：菲林相机交流服务社　·　2025-05-28</p>
+      <p class="vdesc">从装卷、模式盘、对焦到倒卷，按机身控件逐项演示，最适合边看边操作。</p>
+    </a>
+<a class="vcard" href="https://www.bilibili.com/video/BV15aREB1Epg/" target="_blank" rel="noopener noreferrer">
+      <div class="vtop"><span class="vtag">体验</span><span class="vdur">10:38</span><span class="vplay">▶</span></div>
+      <h3>尼康末代胶片单反的性价比王者，F80 使用体验</h3>
+      <p class="vmeta">UP 主：爱折腾的小琪　·　2026-05-02</p>
+      <p class="vdesc">实拍样片＋使用感受，讲清 F80 的定位、优点与“专业性不足”的地方。</p>
+    </a>
+<a class="vcard" href="https://www.bilibili.com/video/BV1g9KhzuEem/" target="_blank" rel="noopener noreferrer">
+      <div class="vtop"><span class="vtag">机型</span><span class="vdur">4:30</span><span class="vplay">▶</span></div>
+      <h3>【穗穗念】讲讲我的：尼康 F80-S</h3>
+      <p class="vmeta">UP 主：椛-Momiji　·　2025-06-23</p>
+      <p class="vdesc">以 F80S 为对象讲机身细节与片间数据打印，对比 F80／F80D 时值得一看。</p>
+    </a>
+<a class="vcard" href="https://www.bilibili.com/video/BV15AK6zNE3F/" target="_blank" rel="noopener noreferrer">
+      <div class="vtop"><span class="vtag">体验</span><span class="vdur">9:44</span><span class="vplay">▶</span></div>
+      <h3>【尼康 F80】轻便小巧功能全</h3>
+      <p class="vmeta">UP 主：柯尼卡爸爸　·　2025-06-27</p>
+      <p class="vdesc">偏“值不值得买”的实用评测，也提到老机常见小毛病的处理。</p>
+    </a>
+<a class="vcard" href="https://www.bilibili.com/video/BV1ne411c76v/" target="_blank" rel="noopener noreferrer">
+      <div class="vtop"><span class="vtag">体验</span><span class="vdur">10:24</span><span class="vplay">▶</span></div>
+      <h3>轻装上阵——尼康 F80</h3>
+      <p class="vmeta">UP 主：喵帕斯摄影生活　·　2022-12-22</p>
+      <p class="vdesc">用了一年后写的使用感悟，适合建立整体印象。</p>
+    </a>
+<a class="vcard" href="https://www.bilibili.com/video/BV1pV411x7kV/" target="_blank" rel="noopener noreferrer">
+      <div class="vtop"><span class="vtag">短片</span><span class="vdur">1:59</span><span class="vplay">▶</span></div>
+      <h3>性价比神器：400 元支持 G 头的尼康胶片单反 F80</h3>
+      <p class="vmeta">UP 主：在下查理　·　2021-06-26</p>
+      <p class="vdesc">4K 外观展示短片，两分钟看清机身各面。</p>
+    </a>
+  </div>
+</section>
+
+<div class="layout">
+  <aside class="toc" aria-label="目录">
+    <h2>目录</h2>
+    <ol>
+<li><a href="#models"><span class="tocnum">一、</span>机型区别</a></li>
+<li><a href="#specs"><span class="tocnum">二、</span>主要规格</a></li>
+<li><a href="#battery"><span class="tocnum">三、</span>电池与开机</a></li>
+<li><a href="#lens"><span class="tocnum">四、</span>镜头</a></li>
+<li><a href="#film"><span class="tocnum">五、</span>装胶卷</a></li>
+<li><a href="#shoot"><span class="tocnum">六、</span>拍摄基本流程</a></li>
+<li><a href="#modes"><span class="tocnum">七、</span>曝光模式（模式盘 P／S／A／M）</a></li>
+<li><a href="#focus"><span class="tocnum">八、</span>对焦</a></li>
+<li><a href="#metering"><span class="tocnum">九、</span>测光</a></li>
+<li><a href="#exposure"><span class="tocnum">十、</span>曝光补偿、AE-L 与包围曝光</a></li>
+<li><a href="#iso"><span class="tocnum">十一、</span>ISO 挡（模式盘最末的 ISO 位置）</a></li>
+<li><a href="#extras"><span class="tocnum">十二、</span>其他常用功能</a></li>
+<li><a href="#flash"><span class="tocnum">十三、</span>闪光摄影</a></li>
+<li><a href="#rewind"><span class="tocnum">十四、</span>倒卷与取卷</a></li>
+<li><a href="#csm"><span class="tocnum">十五、</span>自定义设置（CSM）</a></li>
+<li><a href="#errors"><span class="tocnum">十六、</span>提示信息速查</a></li>
+<li><a href="#care"><span class="tocnum">十七、</span>使用注意与保养</a></li>
+<li><a href="#diff"><span class="tocnum">十八、</span>与原稿的修订对照</a></li>
+    </ol>
+  </aside>
+
+  <main id="main">
+<section id="models">
+<h2><span class="h2num">一、</span>机型区别<a class="anchor" href="#models" aria-label="链接">#</a></h2>
+<div class="table-wrap"><table class="tbl"><thead><tr><th><strong>型号</strong></th><th><strong>后背功能</strong></th><th><strong>说明</strong></th></tr></thead><tbody><tr><td>F80（N80）</td><td>无日期后背</td><td>标准版，最简洁</td></tr><tr><td>F80D（N80QD）</td><td>日期／时间打印</td><td>可打印年/月/日、月/日/年、日/月/年、日/时/分；日期后背适用 DX 胶卷 ISO 32–3200</td></tr><tr><td>F80S</td><td>日期／时间＋片间曝光数据</td><td>在画面之外的片间空白处打印快门速度、光圈值、曝光补偿值；自定义设置 19 项（F80／F80D 为 18 项）</td></tr></tbody></table></div>
+<p>三款机身性能完全相同，差别只在前述后背功能。机身外壳为工程塑料，镜头卡口和反光镜箱为金属，因此“塑料机身”的说法只对机身外壳成立。</p>
+</section>
+<section id="specs">
+<h2><span class="h2num">二、</span>主要规格<a class="anchor" href="#specs" aria-label="链接">#</a></h2>
+<div class="table-wrap"><table class="tbl"><thead><tr><th><strong>项目</strong></th><th><strong>参数</strong></th></tr></thead><tbody><tr><td>类型</td><td>35mm 自动对焦单反，电子控制纵走式焦平面快门，内置闪光灯</td></tr><tr><td>快门速度</td><td>30–1/4000 秒（1/2 级）；B 门仅 M 挡可用</td></tr><tr><td>闪光同步</td><td>最高 1/125 秒</td></tr><tr><td>连拍</td><td>约 2.5 张/秒</td></tr><tr><td>对焦</td><td>5 点 AF（Multi-CAM900），EV −1～19</td></tr><tr><td>测光</td><td>3D 矩阵（10 区）、中央重点、点测光（详见第九节）</td></tr><tr><td>测光范围</td><td>矩阵／中央重点 EV 0–21；点测光 EV 3–21（ISO 100、f/1.4）</td></tr><tr><td>取景器</td><td>视野率约 92%，放大倍率 0.75×（50mm 镜头）；屈光度 −1.8～+0.8 m⁻¹</td></tr><tr><td>胶卷感光度</td><td>DX 自动 ISO 25–5000；手动 ISO 6–6400（1/3 级）</td></tr><tr><td>曝光补偿</td><td>±3 EV、1/2 级；包围曝光 ±2 EV（2 或 3 张，0.5／1／1.5／2 EV）</td></tr><tr><td>内置闪光灯</td><td>GN 12（ISO 100・m），覆盖 28mm 视角</td></tr><tr><td>电源与续航</td><td>2 节 CR123A／DL123A 3V 锂电池；常温无闪光约 50 卷（36 张/卷）</td></tr><tr><td>尺寸与重量</td><td>约 141.5×98.5×71mm，约 515g（不含电池）</td></tr></tbody></table></div>
+</section>
+<section id="battery">
+<h2><span class="h2num">三、</span>电池与开机<a class="anchor" href="#battery" aria-label="链接">#</a></h2>
+<ol class="steps">
+<li>关机，拨动电池仓盖锁扣打开仓盖，按仓内 “＋／−” 标记装入 2 节 CR123A 或 DL123A 锂电池。两极装反会损坏相机。</li>
+<li>开机后轻按快门激活测光，观察 LCD 的电池图标：格数满＝电量充足；格数减少＝电量将尽，备好新电池；图标闪烁＝电量耗尽，快门锁定，须更换电池。（无电池时取景器会变暗，属正常。）</li>
+<li>测光在 6 秒无操作后自动关闭（可用 CSM 15 改为 4／8／16 秒），再按快门即可唤醒。</li>
+<li>换电池时先关机，两节同时更换，并使用同品牌新电池；长期不用请取出电池，防止漏液。</li>
+<li>低温下电量下降明显：−10℃ 时无闪光约 35 卷、闪光占一半约 10 卷，备用电池建议贴身携带。</li>
+<li>可选购 MB-16 电池手柄，改用 4 节 5 号（AA）电池；装手柄后连拍速度不变。</li>
+</ol>
+<div class="call tip"><span class="call-label">提示</span><p>CR123A 是一次性 3V 锂电池，不要用 3.7V 的可充锂电替代。B 门长时间曝光约可连续 6 小时（常温、新电池）。</p></div>
+</section>
+<section id="lens">
+<h2><span class="h2num">四、</span>镜头<a class="anchor" href="#lens" aria-label="链接">#</a></h2>
+<h3>4.1 兼容性</h3>
+<div class="table-wrap"><table class="tbl"><thead><tr><th><strong>镜头类型</strong></th><th><strong>可用功能</strong></th></tr></thead><tbody><tr><td>D 型／G 型 AF Nikkor</td><td>全部功能：3D 矩阵测光、3D 多区平衡补光、全自动曝光模式</td></tr><tr><td>其他 CPU AF Nikkor（非 D／G 型）</td><td>除 3D 矩阵测光以外的全部功能（用普通矩阵测光）</td></tr><tr><td>AI-P Nikkor</td><td>除 3D 矩阵测光和自动对焦以外的功能</td></tr><tr><td>非 CPU 镜头（AI、AI-S 等）</td><td>仅 M 挡可用；测光不可用；光圈由镜头环设定，LCD 显示 F--</td></tr><tr><td>IX-Nikkor、非 AI 镜头</td><td>不能安装，强行安装会损坏机身或镜头</td></tr></tbody></table></div>
+<div class="call key"><span class="call-label">要点</span><p>前提是“CPU 镜头”。AF-D 属于 D 型（带距离信息），可以用上全部功能；不能只说“AF-D 可用全部功能”，因为 D／G 型以外的 AF 镜头（如早期 AF 28-70）没有 3D 矩阵测光。</p></div>
+<h3>4.2 安装与拆卸</h3>
+<ol class="steps">
+<li>关机。将镜头上的安装白点与机身上的白点对齐，从机身前方向看，逆时针旋转镜头至“咔”一声锁定。安装时不要按下镜头释放钮。</li>
+<li>拆卸：按住机身上的镜头释放钮，顺时针旋转镜头取下；不装镜头时盖好机身盖。</li>
+<li>非 G 型 CPU 镜头（带光圈环）：把光圈环转到最小光圈（最大 f 值）并锁住。若光圈环不在最小光圈，开机后 LCD 和取景器会闪烁 FEE，且快门无法释放。G 型镜头没有光圈环，不需要这一步。</li>
+</ol>
+<h3>4.3 显示 FEE 与 F−− 的区别</h3>
+<ul class="bullets">
+<li>FEE 闪烁：只发生在“带光圈环的非 G 型 CPU 镜头”上，原因是光圈环没有转到并锁定在最小光圈。转到最小光圈即可。</li>
+<li>F−− 闪烁：没有装镜头，或装的是非 CPU 镜头。装 CPU 镜头；若确实要用非 CPU 镜头，把模式盘转到 M 挡，用镜头光圈环设定光圈（此时没有测光）。</li>
+<li>非 G 型 CPU 镜头的光圈环要一直保持在最小光圈并锁定，光圈值全部由机身指令拨盘设定。</li>
+</ul>
+</section>
+<section id="film">
+<h2><span class="h2num">五、</span>装胶卷<a class="anchor" href="#film" aria-label="链接">#</a></h2>
+<ol class="steps">
+<li>开机，确认 LCD 感光度显示为 DX（否则见第九节），向侧面滑动后盖锁释放杆打开后盖。</li>
+<li>把胶卷暗盒放入左侧片仓，将片头从下方插入右侧卷片轴，向外拉到红色标记处。片头不要超过红线。</li>
+<li>按住暗盒、确认胶卷没有松动，轻轻合上后盖至“咔”一声；相机会自动进片到第 1 张，LCD 显示 “1”。</li>
+<li>若 LCD 与取景器同时闪烁 Err 和 E，说明胶卷没装好，打开后盖重装。</li>
+<li>若装入非 DX 编码胶卷而感光度仍是 DX，会闪烁 DX 与 Err 并锁住快门，需按第九节手动设定感光度。</li>
+<li>拍摄中可通过后盖的胶卷确认窗查看剩余张数。</li>
+</ol>
+<div class="call warn"><span class="call-label">注意</span><p>快门帘幕很薄，手指和片头都不要碰；室外换卷避免阳光直射；本机用红外线检测过片，不能使用红外胶卷。</p></div>
+</section>
+<section id="shoot">
+<h2><span class="h2num">六、</span>拍摄基本流程<a class="anchor" href="#shoot" aria-label="链接">#</a></h2>
+<ol class="steps">
+<li>开机，转动模式盘选择曝光模式（P／S／A／M）。</li>
+<li>用对焦模式选择器选 S 或 C（自动对焦）或 M（手动对焦）；用 AF 区域模式选择器选单区或动态。</li>
+<li>半按快门：合焦时取景器显示 ●，同时显示快门速度与光圈值。</li>
+<li>确认曝光：P／S／A 下若出现 HI（过亮）或 Lo（过暗）按提示调整（见第十六节）；M 挡看电子模拟曝光显示。</li>
+<li>全按快门拍摄；松手后自动进片到下一张，可立即拍下一张。</li>
+<li>一卷拍完会自动倒片，倒片结束后再开后盖取卷。</li>
+</ol>
+<div class="call begin"><span class="call-label">新手设置</span><p>模式盘 P、对焦模式 S、AF 区域“单区＋中央对焦点”、测光矩阵、片模式单张。熟练后再用 A 挡控制景深。</p></div>
+</section>
+<section id="modes">
+<h2><span class="h2num">七、</span>曝光模式（模式盘 P／S／A／M）<a class="anchor" href="#modes" aria-label="链接">#</a></h2>
+<ul class="bullets">
+<li>P（自动多程序）：相机按程序曲线同时决定快门与光圈，适合抓拍。转动主指令拨盘可“程序偏移”（LCD 显示 P*），在曝光量不变的前提下改变快门／光圈组合；关机、换模式、使用闪光灯或双键复位会取消偏移。</li>
+<li>S（快门优先）：用主指令拨盘设定 30–1/4000 秒，相机自动配光圈。高速快门凝固动作，低速快门表现动感。</li>
+<li>A（光圈优先）：用副指令拨盘设定光圈，相机自动配快门。光圈越大景深越浅（背景虚化），光圈越小景深越深。</li>
+<li>M（手动）：主指令拨盘设快门、副指令拨盘设光圈，取景器的电子模拟曝光显示给出与正确曝光的偏差（±3 EV，超出范围会闪烁）。B 门（bulb）只能在 M 挡设定。</li>
+<li>程序偏移、曝光补偿都不会改变 M 挡已设定的快门和光圈，只改变显示。</li>
+</ul>
+<div class="call warn"><span class="call-label">注意</span><p>在 M 挡选了 bulb 之后直接转到 S 挡，bulb 会闪烁并锁住快门，需先转主拨盘改回具体快门速度。P／S／A 只能在 CPU 镜头上使用。</p></div>
+</section>
+<section id="focus">
+<h2><span class="h2num">八、</span>对焦<a class="anchor" href="#focus" aria-label="链接">#</a></h2>
+<h3>8.1 对焦模式选择器（机身上，独立于模式盘）</h3>
+<ul class="bullets">
+<li>S（单次伺服 AF，对焦优先）：合焦后取景器显示 ● 才能释放快门；半按期间焦点锁定，可“先对焦后构图”。对移动物体进入跟踪对焦，物体停下时锁定。</li>
+<li>C（连续伺服 AF，释放优先）：不论是否合焦都可释放快门，相机持续对焦直到曝光，适合迎面运动的主体。</li>
+<li>M（手动对焦）：转动镜头对焦环，看到磨砂屏清晰即可，不必合焦也能释放快门。</li>
+</ul>
+<p>对焦模式选择器是独立开关，不在模式盘上：模式盘的 S 是快门优先，对焦开关的 S 是单次伺服，两者不是一回事。</p>
+<h3>8.2 AF 区域模式与对焦点</h3>
+<ul class="bullets">
+<li>单区 AF：只用所选的那一个对焦点，适合静态主体。</li>
+<li>动态 AF：以所选对焦点为主，主体移动时自动切换到其他对焦点；配 S 挡时默认开启“最近主体优先”（相机自动选最近的主体，此时不能手动选对焦点）。</li>
+<li>选择对焦点：先拨开对焦点选择锁杆解锁，半按快门的同时用机身背面的四向选择器上下左右移动；再拨回锁杆可锁定，防止误碰。</li>
+<li>对焦锁定：S 挡下半按快门即锁定；C 挡下按住 AE-L/AF-L 按钮锁定（松手即解除，可用 CSM 11 改成松手仍保持）。锁定后重新构图再拍。</li>
+<li>AF 辅助灯：S 挡＋AF 镜头＋暗处＋中央对焦点时自动点亮，有效距离约 0.5–3m，适用 24–200mm 镜头；可用 CSM 18 关闭。</li>
+</ul>
+<h3>8.3 手动对焦与易失焦场景</h3>
+<ul class="bullets">
+<li>M 挡可配合“电子测距”：半按快门点亮测光，转动对焦环直到取景器出现 ●。适用于最大光圈 f/5.6 以上的镜头。</li>
+<li>自动对焦可能失准的情况：低反差（同色衣服与墙）、对焦点内远近物体并存（笼中动物）、重复图案（楼房窗格）、明暗反差极大（逆光）。此时改用手动对焦，或对同距离物体对焦锁定后重新构图。</li>
+</ul>
+</section>
+<section id="metering">
+<h2><span class="h2num">九、</span>测光<a class="anchor" href="#metering" aria-label="链接">#</a></h2>
+<p>测光模式选择器在取景器右侧（机背）。三档：</p>
+<div class="table-wrap"><table class="tbl"><thead><tr><th><strong>测光模式</strong></th><th><strong>特点</strong></th><th><strong>适用</strong></th></tr></thead><tbody><tr><td>矩阵测光（3D 矩阵）</td><td>10 区感应器；用 D／G 型镜头时加入距离信息成为 3D 矩阵</td><td>日常、顺光、抓拍（默认）</td></tr><tr><td>中央重点测光</td><td>约 75% 权重集中在画面中央 12mm 圆内</td><td>主体在中央、逆光人像，配合 AE-L 或曝光补偿</td></tr><tr><td>点测光</td><td>4mm 圆（约占画面 1%），随所选对焦点移动</td><td>高反差、舞台、逆光主体</td></tr></tbody></table></div>
+<p>点测光在“最近主体优先”模式下固定在画面中央。装非 CPU 镜头时测光系统完全不可用。需要 AE-L 或曝光补偿时，建议用中央重点或点测光，矩阵测光下锁定效果不明显。</p>
+</section>
+<section id="exposure">
+<h2><span class="h2num">十、</span>曝光补偿、AE-L 与包围曝光<a class="anchor" href="#exposure" aria-label="链接">#</a></h2>
+<ul class="bullets">
+<li>曝光补偿：按住 ±（曝光补偿）按钮同时转主指令拨盘，范围 ±3 EV、1/2 级。LCD 显示补偿标记，按 ± 键可查看补偿值。注意：关机不会清除补偿，必须手动归零或双键复位。背景比主体亮时向 + 补偿，背景暗时向 − 补偿。</li>
+<li>AE-L（自动曝光锁定）：按住 AE-L/AF-L 按钮锁定曝光，取景器显示 EL，可重新构图；默认同时锁定对焦。锁定期间仍可做程序偏移、改快门或改光圈。需配合中央重点或点测光使用。</li>
+<li>包围曝光：按住包围曝光按钮同时转主拨盘开启（LCD 显示 3F／2F 等），再转副拨盘选择张数与级差（0.5／1／1.5／2 EV，2 或 3 张）；按设定连续拍摄不同曝光。取消用同样操作，或双键复位（会回到 3F 0.5）。</li>
+<li>连续过片时按住快门即可一次拍完包围序列；拍不完可换卷或关机后再继续。</li>
+</ul>
+</section>
+<section id="iso">
+<h2><span class="h2num">十一、</span>ISO 挡（模式盘最末的 ISO 位置）<a class="anchor" href="#iso" aria-label="链接">#</a></h2>
+<ul class="bullets">
+<li>转到 ISO，转主拨盘即可设定／确认感光度：DX（按胶卷 DX 编码自动设定 ISO 25–5000）或手动 ISO 6–6400（1/3 级）。</li>
+<li>DX 胶卷也可以手动增减感光度（相当于推拉曝光），但换卷时是否复位由 CSM 2 决定。</li>
+<li>拨在 ISO 挡时快门不能释放，拍前务必转回 P／S／A／M；同理，拨在 CSM 挡时也不能释放快门。</li>
+<li>非 DX 编码胶卷必须手动设定感光度，否则报错并锁快门。</li>
+</ul>
+</section>
+<section id="extras">
+<h2><span class="h2num">十二、</span>其他常用功能<a class="anchor" href="#extras" aria-label="链接">#</a></h2>
+<div class="table-wrap"><table class="tbl"><thead><tr><th><strong>功能</strong></th><th><strong>操作要点</strong></th></tr></thead><tbody><tr><td>自拍</td><td>按住锁释放把过片模式选择器拨到自拍位置，全按快门后 10 秒释放（前 8 秒指示灯闪、后 2 秒常亮）；CSM 16 可改为 2／5／20 秒。自拍时建议用 DK-5 目镜盖遮住取景器，防止杂光影响测光。B 门＋自拍时快门被限制在约 1/8–1/15 秒。</td></tr><tr><td>连拍</td><td>过片模式选择器拨到连拍，约 2.5 张/秒；按住快门持续拍摄。</td></tr><tr><td>多重曝光</td><td>过片模式选择器拨到多重曝光（取景器显示多重曝光标记），同一张底片多次曝光，计数器不前进。按张数做曝光补偿：2 张 −1 EV、3 张 −1.5 EV、4 张 −2 EV；拍完把选择器拨回其他位置结束。</td></tr><tr><td>B 门（长时间曝光）</td><td>M 挡，主拨盘转到 bulb，按住快门期间帘幕一直开启；用三脚架，可用 AR-3 机械快门线接在快门按钮的螺纹孔上。</td></tr><tr><td>景深预览</td><td>按下景深预览按钮，光圈收到当前设定值，从取景器观察景深。</td></tr><tr><td>LCD 照明</td><td>按 LCD 照明按钮点亮（该按钮同时也是倒片键之一）；CSM 17 可设为按任意键点亮。</td></tr><tr><td>屈光度调节</td><td>取下橡胶眼罩，滑动取景器旁的调节杆直到取景器显示最清晰，再装回眼罩。</td></tr><tr><td>双键复位</td><td>同时按住带绿色圆点标记的两个按钮（曝光补偿 ± 与包围曝光按钮）2 秒以上：对焦点回中央，取消程序偏移、曝光补偿、AE-L、包围曝光与闪光同步模式设置。</td></tr></tbody></table></div>
+</section>
+<section id="flash">
+<h2><span class="h2num">十三、</span>闪光摄影<a class="anchor" href="#flash" aria-label="链接">#</a></h2>
+<h3>13.1 内置闪光灯</h3>
+<ol class="steps">
+<li>按闪光灯锁释放钮，闪光灯弹起并开始充电；充电完成取景器显示闪光符号（不闪）。不用时按回原位以省电。</li>
+<li>同步速度最高 1/125 秒。P／A 挡下相机会自动把快门限制在 1/60–1/125 秒（慢速同步、后帘同步可延长到 30 秒）；S／M 挡下若快门设得比 1/125 快，会在闪光时自动降到 1/125 并提示。</li>
+<li>测光用矩阵或中央重点；点测光或 M 挡会自动变为“标准 TTL”（不做补光平衡）。</li>
+<li>覆盖 28mm 视角；用 28mm 以下的广角或过大的遮光罩会被镜头遮挡，出现暗角。</li>
+</ol>
+<h3>13.2 五种闪光同步模式（按住闪光同步模式按钮转主拨盘选择）</h3>
+<ul class="bullets">
+<li>前帘同步（普通）：一般闪光拍摄，默认设置。</li>
+<li>慢速同步：快门可慢到 30 秒，把背景的现场光也拍进来，适合夜景人像，需三脚架。</li>
+<li>后帘同步：曝光结束瞬间闪光，动体的光轨拖在主体后面；影室闪光灯不能用。</li>
+<li>防红眼：闪光前防红眼灯亮约 1 秒。</li>
+<li>防红眼＋慢速同步：两者合用。</li>
+</ul>
+<h3>13.3 TTL 模式与补偿</h3>
+<div class="table-wrap"><table class="tbl"><thead><tr><th><strong>镜头</strong></th><th><strong>TTL 闪光模式</strong></th></tr></thead><tbody><tr><td>D 型／G 型</td><td>3D 多区平衡补光（含距离信息与预闪）</td></tr><tr><td>其他 CPU 镜头</td><td>多区平衡补光（含预闪）</td></tr><tr><td>非 CPU 镜头</td><td>标准 TTL（仅 M 挡可用）</td></tr></tbody></table></div>
+<ul class="bullets">
+<li>闪光曝光补偿：按住闪光补偿按钮转主拨盘，只补偿闪光输出，不改变环境光曝光（与普通曝光补偿不同）。</li>
+<li>外接闪光灯：直接装热靴（如 SB-80DX、SB-50DX、SB-28 等），TTL 自动闪光适用 ISO 25–1000。只使用尼康闪光灯，第三方闪光灯可能因触发电压损坏电路。</li>
+<li>闪光灯全光输出后闪光符号闪烁约 3 秒，说明可能欠曝，需靠近主体、开大光圈或提高感光度。</li>
+</ul>
+</section>
+<section id="rewind">
+<h2><span class="h2num">十四、</span>倒卷与取卷<a class="anchor" href="#rewind" aria-label="链接">#</a></h2>
+<ol class="steps">
+<li>卷末自动倒片（CSM 1 可关闭自动倒片）；倒片时 LCD 倒计数，完成后胶卷符号闪烁。</li>
+<li>中途倒片：同时按住两个倒片按钮约 1 秒——即“闪光灯同步模式按钮”和“LCD 照明按钮”，这两个键同时也是倒片键。</li>
+<li>倒片速度：默认高速（36 张约 15 秒），CSM 13 可改为静音（约 23 秒）。</li>
+<li>确认倒片完成（胶卷符号闪烁）再打开后盖，斜向倒出暗盒。倒片未完成就开后盖会报警（胶卷符号与计数闪烁），应立即关后盖，再按两个倒片键重新倒片。</li>
+<li>电池电量低或低温导致倒片中断时：关机、换新电池、开机后重新倒片。</li>
+</ol>
+</section>
+<section id="csm">
+<h2><span class="h2num">十五、</span>自定义设置（CSM）<a class="anchor" href="#csm" aria-label="链接">#</a></h2>
+<p>把模式盘转到 CSM（此时不能释放快门），用主拨盘选 1–18（F80S 为 19）项，再用副拨盘改选项。取消：在 CSM 挡做双键复位（全部复位），或把该项改回初始值。</p>
+<div class="table-wrap"><table class="tbl csm"><thead><tr><th><strong>序号</strong></th><th><strong>项目</strong></th><th><strong>选项（粗体为出厂初始值）</strong></th></tr></thead><tbody><tr><td>1</td><td>卷末自动倒片</td><td><strong>开</strong>／关（关闭后须手动按两键倒片）</td></tr><tr><td>2</td><td>换卷时感光度复位为 DX</td><td><strong>开</strong>／关</td></tr><tr><td>3</td><td>包围曝光顺序</td><td><strong>0、−、＋</strong>／−、0、＋</td></tr><tr><td>4</td><td>取景器网格线</td><td><strong>不显示</strong>／显示</td></tr><tr><td>5</td><td>对焦点红色照明</td><td><strong>暗处自动</strong>／不亮／总是亮</td></tr><tr><td>6</td><td>对焦点循环选择</td><td><strong>普通</strong>／循环</td></tr><tr><td>7</td><td>半按快门是否 AE-L</td><td><strong>否</strong>／是</td></tr><tr><td>8</td><td>合上后盖自动进片</td><td><strong>是</strong>／否</td></tr><tr><td>9</td><td>S 挡＋动态 AF 最近主体优先</td><td><strong>开</strong>／关</td></tr><tr><td>10</td><td>C 挡＋动态 AF 最近主体优先</td><td><strong>关</strong>／开</td></tr><tr><td>11</td><td>AE-L/AF-L 按钮功能</td><td><strong>同时锁定 AE＋AF</strong>／只锁 AE／只锁 AF／AE 锁定保持／只用该键启动 AF</td></tr><tr><td>12</td><td>指令拨盘功能</td><td><strong>主拨盘快门＋副拨盘光圈</strong>／互换</td></tr><tr><td>13</td><td>倒片速度</td><td><strong>高速</strong>／静音</td></tr><tr><td>14</td><td>多重曝光释放方式</td><td><strong>单张</strong>／连续</td></tr><tr><td>15</td><td>测光自动关闭时间</td><td>4／<strong>6</strong>／8／16 秒</td></tr><tr><td>16</td><td>自拍延时</td><td>2／5／<strong>10</strong>／20 秒</td></tr><tr><td>17</td><td>任意键点亮 LCD</td><td><strong>关</strong>／开</td></tr><tr><td>18</td><td>AF 辅助灯</td><td><strong>开</strong>／关</td></tr></tbody></table></div>
+<div class="call note"><span class="call-label">注</span><p>F80S 比 F80／F80D 多一项自定义设置（与片间曝光数据打印相关），因此是 19 项。</p></div>
+</section>
+<section id="errors">
+<h2><span class="h2num">十六、</span>提示信息速查<a class="anchor" href="#errors" aria-label="链接">#</a></h2>
+<div class="table-wrap"><table class="tbl err"><thead><tr><th><strong>LCD／取景器显示</strong></th><th><strong>含义</strong></th><th><strong>处理</strong></th></tr></thead><tbody><tr><td>FEE 闪烁</td><td>非 G 型 CPU 镜头的光圈环不在最小光圈</td><td>把光圈环转到最小光圈并锁定</td></tr><tr><td>F−− 闪烁</td><td>未装镜头，或装了非 CPU 镜头</td><td>装 CPU 镜头；非 CPU 镜头则转到 M 挡，用镜头环设光圈</td></tr><tr><td>Err 与 E 闪烁</td><td>胶卷没装好</td><td>打开后盖重新装卷</td></tr><tr><td>DX 与 Err 闪烁</td><td>装的是非 DX 胶卷，感光度仍是 DX</td><td>手动设定感光度</td></tr><tr><td>电池图标闪烁</td><td>电量耗尽，快门锁定</td><td>关机，换两节新电池</td></tr><tr><td>Err 单独闪烁</td><td>检测到故障</td><td>再按一次快门；仍出现则送修</td></tr><tr><td>End 闪烁</td><td>片尾已到且关闭了自动倒片（CSM 1）</td><td>同时按两个倒片键倒片</td></tr><tr><td>HI（过曝警告）</td><td>主体过亮</td><td>P：加 ND 镜；S：提高快门；A：收小光圈</td></tr><tr><td>Lo（欠曝警告）</td><td>主体过暗</td><td>P：用闪光灯；S：放慢快门；A：开大光圈</td></tr><tr><td>电子模拟曝光显示闪烁</td><td>超出测光范围</td><td>亮处加 ND 镜，暗处用闪光灯</td></tr><tr><td>bulb 闪烁</td><td>在 S 挡选了 B 门</td><td>改回具体快门速度，或转 M 挡拍 B 门</td></tr><tr><td>快门速度闪烁＋闪光符号</td><td>快门快于闪光同步速度</td><td>直接拍摄即可，会自动降到 1/125</td></tr><tr><td>闪光符号全光后闪 3 秒</td><td>可能欠曝</td><td>靠近主体、开大光圈或提高 ISO</td></tr><tr><td>胶卷符号与计数闪烁</td><td>倒片中途打开了后盖</td><td>关后盖，同时按两个倒片键重新倒片</td></tr></tbody></table></div>
+</section>
+<section id="care">
+<h2><span class="h2num">十七、</span>使用注意与保养<a class="anchor" href="#care" aria-label="链接">#</a></h2>
+<ul class="bullets">
+<li>不能用红外胶卷（机身用红外线检测片位）；不要用手指或片头触碰快门帘幕。</li>
+<li>不要安装非 AI 镜头和 IX-Nikkor 镜头，会损坏机身或镜头。</li>
+<li>不能使用线性偏振镜，请用圆偏振镜（C-PL）；其他品牌特殊滤镜可能影响 AF 与电子测距。</li>
+<li>只使用尼康闪光灯，第三方闪光灯可能因触发电压不同损坏电路；影室闪光灯不能用后帘同步。</li>
+<li>取景器在无电池时会变暗，装上电池即恢复正常，这不是故障。</li>
+<li>机身为工程塑料，避免摔碰与沙尘、雨水；橡胶蒙皮发粘是老机的常见老化现象。</li>
+<li>清洁：气吹吹掉灰尘，再用镜头纸／专用清洁液擦拭镜片；不要用有机溶剂。避免高温、潮湿和强磁场环境。</li>
+<li>长期不用：取出电池、盖好机身盖，放在干燥处；定期空拍几次让机械部件活动。</li>
+</ul>
+</section>
+<section id="diff">
+<h2><span class="h2num">十八、</span>与原稿的修订对照<a class="anchor" href="#diff" aria-label="链接">#</a></h2>
+<div class="table-wrap"><table class="tbl diff"><thead><tr><th><strong>原稿内容</strong></th><th><strong>修订说明</strong></th></tr></thead><tbody><tr><td>「cpu触，AF-D 可相机全部功能」</td><td>前提是 CPU 镜头；D／G 型才有全部功能（3D 矩阵＋3D 补光）。非 D／G 的 AF 镜头没有 3D 矩阵测光，AI-P 没有自动对焦。</td></tr><tr><td>「镜头安装：小白点对准机身，逆时针」</td><td>思路正确，补充：先关机；逆向（从机身前方向看）转到“咔”一声锁定；拆卸是按住释放钮顺时针旋下。</td></tr><tr><td>「FEE 为没把光圈调到最小」</td><td>只对带光圈环的非 G 型 CPU 镜头成立，且此时快门被锁定；G 型镜头无光圈环，不存在此问题。</td></tr><tr><td>「M 手动曝光…CSM 自定义，ISO 自动识别感光度」</td><td>P／S／A／M 是曝光模式；CSM 是自定义设置挡，ISO 是设定／确认感光度挡（DX 自动或手动 6–6400）。CSM、ISO 挡下快门都不能释放。</td></tr><tr><td>「M 挡位手动对焦，S 单次伺服，C 连续伺服」</td><td>对焦模式是机身独立的 S／C／M 选择器，与模式盘无关；模式盘的 S 是快门优先。</td></tr><tr><td>「安装胶卷：侧面按压卡口，片头朝下…」</td><td>应以滑动后盖锁释放杆打开后盖；片头从下方插入卷片轴并拉到红色标记（不可超过）；合盖后自动进片到第 1 张；装错会显示 Err＋E。</td></tr><tr><td>「倒卷：同时按住闪光灯同步模式和显示灯」</td><td>正确。两个键是“闪光灯同步模式按钮”和“LCD 照明按钮”，按住约 1 秒；卷末也会自动倒片，倒片速度可由 CSM 13 切换。</td></tr><tr><td>「电池：CR123A 两节」</td><td>补充 DL123A 也可；电量符号三档提示；常温无闪光约 50 卷；可加 MB-16 手柄用 5 号电池。</td></tr><tr><td>对比表「塑料机身」</td><td>外壳为工程塑料，镜头卡口与反光镜箱为金属；F80S 还可打印片间曝光数据（快门／光圈／补偿）。</td></tr></tbody></table></div>
+<p>以上内容依据尼康 N80／N80QD 使用说明书（F80 系列同一机型）及 F80D／F80S 官方资料整理。若与随机说明书文字不一致，以随机说明书为准。</p>
+</section>
+  </main>
+</div>
+
+<a class="to-top" href="#" aria-label="回到顶部">↑</a>
+
+<footer>
+  <div class="fin">
+    <p>依据 Nikon N80／N80QD 使用说明书（F80 系列为同一机型）及 F80D／F80S 官方资料整理；视频条目按 B 站公开信息（标题、UP 主、时长、BV 号）核对，版权归原作者所有。</p>
+    <p>与随机说明书文字不一致时，以随机说明书为准。本页为单文件 HTML，可离线保存／打印；同目录下的 <a href="./F80-guide.docx">Word 版使用指南</a> 内容相同，便于打印。</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var q = document.getElementById('q');
+  var hits = document.getElementById('hits');
+  var secs = Array.prototype.slice.call(document.querySelectorAll('main section'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+
+  function applyFilter() {
+    var v = q.value.trim().toLowerCase();
+    var n = 0;
+    secs.forEach(function (s) {
+      if (!v) { s.classList.remove('dim'); return; }
+      var hit = s.textContent.toLowerCase().indexOf(v) !== -1;
+      s.classList.toggle('dim', !hit);
+      if (hit) n++;
+    });
+    hits.textContent = v ? ('匹配 ' + n + ' 节') : '';
+    if (!v) { links.forEach(function (a) { a.classList.remove('no-hit'); }); }
+  }
+
+  q.addEventListener('input', applyFilter);
+  q.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { q.value = ''; applyFilter(); q.blur(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+  });
+
+  // scrollspy
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var id = en.target.id;
+        links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      });
+    }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+    secs.forEach(function (s) { obs.observe(s); });
+  }
+
+  // back to top
+  var top = document.querySelector('.to-top');
+  window.addEventListener('scroll', function () {
+    top.classList.toggle('show', window.scrollY > 700);
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
